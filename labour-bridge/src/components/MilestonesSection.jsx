@@ -72,8 +72,8 @@ const MilestonesSection = () => {
   };
 
   return (
-    <section id="milestones" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="milestones" className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-x-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div 
           className="text-center mb-16"
@@ -83,7 +83,7 @@ const MilestonesSection = () => {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -104,7 +104,7 @@ const MilestonesSection = () => {
         </motion.div>
 
         {/* Achievement Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-20">
           {achievements.map((achievement, index) => (
             <motion.div 
               key={index} 
@@ -115,8 +115,8 @@ const MilestonesSection = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className={`bg-gradient-to-r ${getColorClasses(achievement.color)} rounded-2xl p-6 text-white mb-4`}>
-                <div className="text-3xl md:text-4xl font-bold">{achievement.number}</div>
+              <div className={`bg-gradient-to-r ${getColorClasses(achievement.color)} rounded-2xl p-4 sm:p-6 text-white mb-4`}>
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">{achievement.number}</div>
               </div>
               <div className="text-gray-900 font-semibold">{achievement.label}</div>
             </motion.div>
@@ -125,38 +125,38 @@ const MilestonesSection = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gray-200"></div>
+          {/* Timeline line - Mobile: left-aligned, Desktop: center */}
+          <div className="absolute left-6 lg:left-1/2 lg:transform lg:-translate-x-px top-0 bottom-0 w-0.5 bg-gray-200"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             {milestones.map((milestone, index) => {
               const Icon = milestone.icon;
               const isEven = index % 2 === 0;
               
               return (
-                <div key={index} className={`relative flex items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                <div key={index} className={`relative flex items-start lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                  {/* Timeline dot - Mobile: left-aligned, Desktop: center */}
+                  <div className="absolute left-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-3 h-3 lg:w-4 lg:h-4 bg-blue-600 rounded-full border-2 lg:border-4 border-white shadow-lg z-10"></div>
                   
-                  {/* Content */}
-                  <div className={`w-full lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                    <div className={`bg-white rounded-2xl p-8 shadow-lg border border-gray-100 ${isEven ? 'lg:mr-8' : 'lg:ml-8'}`}>
-                      <div className="flex items-center mb-4">
-                        <div className="bg-blue-100 p-3 rounded-xl">
-                          <Icon className="h-6 w-6 text-blue-600" />
+                  {/* Content - Mobile: left margin, Desktop: alternating */}
+                  <div className={`w-full ml-12 lg:ml-0 lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
+                    <div className={`bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 ${isEven ? 'lg:mr-8' : 'lg:ml-8'}`}>
+                      <div className="flex items-start sm:items-center mb-4">
+                        <div className="bg-blue-100 p-2 sm:p-3 rounded-xl flex-shrink-0">
+                          <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600" />
                         </div>
-                        <div className="ml-4">
-                          <div className="text-sm font-semibold text-blue-600">{milestone.year} {milestone.quarter}</div>
-                          <div className="text-lg font-bold text-gray-900">{milestone.title}</div>
+                        <div className="ml-3 sm:ml-4 min-w-0">
+                          <div className="text-xs sm:text-sm font-semibold text-blue-600">{milestone.year} {milestone.quarter}</div>
+                          <div className="text-sm sm:text-lg font-bold text-gray-900 leading-tight">{milestone.title}</div>
                         </div>
                       </div>
                       
-                      <p className="text-gray-600 leading-relaxed mb-4">
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
                         {milestone.description}
                       </p>
                       
-                      <div className="bg-blue-50 rounded-lg p-3 inline-block">
-                        <span className="text-blue-800 font-semibold">{milestone.stats}</span>
+                      <div className="bg-blue-50 rounded-lg p-2 sm:p-3 inline-block">
+                        <span className="text-xs sm:text-sm text-blue-800 font-semibold">{milestone.stats}</span>
                       </div>
                     </div>
                   </div>
@@ -167,8 +167,8 @@ const MilestonesSection = () => {
         </div>
 
         {/* Future Vision */}
-        <div className="mt-20 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 md:p-12 text-white">
+        <div className="mt-12 lg:mt-20 text-center">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl lg:rounded-3xl p-6 sm:p-8 md:p-12 text-white">
             <h3 className="text-3xl md:text-4xl font-bold mb-6">Looking Ahead</h3>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               As we continue to grow, our commitment remains unchanged: to be India's most trusted 

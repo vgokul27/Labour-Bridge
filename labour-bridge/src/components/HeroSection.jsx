@@ -10,8 +10,8 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-pattern"></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 pt-20 sm:pt-24 overflow-x-hidden">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           {/* Left Content */}
           <motion.div 
             className="text-white"
@@ -20,7 +20,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <motion.h1 
-              className="text-2xl md:text-4xl lg:text-4xl font-bold leading-tight mb-6"
+              className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -32,7 +32,7 @@ const HeroSection = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-xl mb-8 text-blue-100 leading-relaxed"
+              className="text-base sm:text-lg md:text-xl mb-8 text-blue-100 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -42,7 +42,7 @@ const HeroSection = () => {
             </motion.p>
 
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-4 mb-12 w-full"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -66,7 +66,7 @@ const HeroSection = () => {
 
             {/* Stats */}
             <motion.div 
-              className="grid grid-cols-3 gap-6 pt-8 border-t border-blue-600"
+              className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 pt-8 border-t border-blue-600 w-full"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.0 }}

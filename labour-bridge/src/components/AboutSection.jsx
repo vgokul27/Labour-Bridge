@@ -20,8 +20,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-12 sm:py-16 md:py-20 bg-gray-50 w-full overflow-x-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Company Overview */}
         <motion.div 
           className="text-center mb-16"
@@ -31,7 +31,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -46,7 +46,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
               LABOURBridge India is a leading manpower outsourcing and labor supply company in India, 
               offering end-to-end staffing solutions. Headquartered in Chennai with regional offices 
               in Hyderabad, Mumbai, Kerala, Gujarat, and Kolkata, we are committed to timely deployment, 

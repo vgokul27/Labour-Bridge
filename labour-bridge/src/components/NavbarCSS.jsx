@@ -18,21 +18,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-white shadow-lg fixed w-full top-0 z-50 overflow-x-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center opacity-0 animate-fade-in">
             <img 
               src="/logo.jpg" 
               alt="LABOURBridge India Logo" 
-              className="h-10 w-auto mr-3"
+              className="h-8 sm:h-10 w-auto mr-2 sm:mr-3"
             />
             <div>
-              <h1 className="text-xl font-bold text-gray-800 leading-tight">
+              <h1 className="text-lg sm:text-xl font-bold text-gray-800 leading-tight">
                 LABOURBridge
               </h1>
-              <p className="text-sm text-blue-600 font-medium -mt-1">
+              <p className="text-xs sm:text-sm text-blue-600 font-medium -mt-1">
                 India
               </p>
             </div>
@@ -89,26 +89,26 @@ const Navbar = () => {
           />
 
           {/* Sidebar */}
-          <div className="fixed top-0 right-0 h-full w-64 bg-white shadow-2xl z-50 lg:hidden animate-slide-in-right">
+          <div className="fixed top-0 right-0 h-full w-72 sm:w-80 bg-white shadow-2xl z-50 lg:hidden animate-slide-in-right">
             <div className="flex flex-col h-full">
               {/* Sidebar Header */}
-              <div className="flex items-center justify-between p-4 border-b border-gray-200">
-                <div className="flex items-center">
+              <div className="flex items-center justify-between p-3 border-b border-gray-200 min-h-[60px]">
+                <div className="flex items-center min-w-0 flex-1">
                   <img 
                     src="/logo.jpg" 
                     alt="LABOURBridge India Logo" 
-                    className="h-8 w-auto mr-2"
+                    className="h-6 w-auto mr-2 flex-shrink-0"
                   />
-                  <div>
-                    <h2 className="text-lg font-bold text-gray-800 leading-tight">LABOURBridge</h2>
-                    <p className="text-sm text-blue-600 font-medium -mt-1">India</p>
+                  <div className="min-w-0">
+                    <h2 className="text-sm font-bold text-gray-800 leading-tight truncate">LABOURBridge</h2>
+                    <p className="text-xs text-blue-600 font-medium -mt-1 truncate">India</p>
                   </div>
                 </div>
                 <button
                   onClick={toggleMenu}
-                  className="p-2 rounded-md text-gray-700 hover:text-blue-500 hover:bg-gray-100 transition-colors duration-200"
+                  className="p-1.5 rounded-md text-gray-700 hover:text-blue-500 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0 ml-2"
                 >
-                  <X className="h-5 w-5" />
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
