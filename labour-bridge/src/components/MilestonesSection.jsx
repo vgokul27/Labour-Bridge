@@ -1,113 +1,122 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Calendar, Trophy, Users, Target } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Calendar, Trophy, Users, Target } from "lucide-react";
 
 const MilestonesSection = () => {
   const milestones = [
     {
-      year: '2023',
-      quarter: 'Q1',
-      title: 'Company Foundation',
-      description: 'LABOURBridge India was established with a vision to revolutionize manpower outsourcing in India.',
+      year: "2023",
+      quarter: "Q1",
+      title: "Company Foundation",
+      description:
+        "LABOURBridge India was established with a vision to revolutionize manpower outsourcing in India.",
       icon: Trophy,
-      stats: 'Founded'
+      stats: "Founded",
     },
     {
-      year: '2023',
-      quarter: 'Q2',
-      title: 'First Major Client Win',
-      description: 'Successfully partnered with TATA Projects for a large-scale infrastructure project.',
+      year: "2023",
+      quarter: "Q2",
+      title: "First Major Client Win",
+      description:
+        "Successfully partnered with TATA Projects for a large-scale infrastructure project.",
       icon: Target,
-      stats: '1st Client'
+      stats: "1st Client",
     },
     {
-      year: '2023',
-      quarter: 'Q4',
-      title: '1,000+ Active Workers',
-      description: 'Reached the milestone of managing over 1,000 active workers across multiple projects.',
+      year: "2023",
+      quarter: "Q4",
+      title: "1,000+ Active Workers",
+      description:
+        "Reached the milestone of managing over 1,000 active workers across multiple projects.",
       icon: Users,
-      stats: '1,000+ Workers'
+      stats: "1,000+ Workers",
     },
     {
-      year: '2024',
-      quarter: 'Q2',
-      title: 'Pan-India Expansion',
-      description: 'Opened regional offices in Hyderabad, Mumbai, Kerala, Gujarat, and Kolkata.',
+      year: "2024",
+      quarter: "Q2",
+      title: "Pan-India Expansion",
+      description:
+        "Opened regional offices in Hyderabad, Mumbai, Kerala, Gujarat, and Kolkata.",
       icon: Calendar,
-      stats: '6 Cities'
+      stats: "6 Cities",
     },
     {
-      year: '2024',
-      quarter: 'Q4',
-      title: '25,000+ Workforce',
-      description: 'Successfully scaled operations to manage over 25,000 active workers nationwide.',
+      year: "2024",
+      quarter: "Q4",
+      title: "25,000+ Workforce",
+      description:
+        "Successfully scaled operations to manage over 25,000 active workers nationwide.",
       icon: Users,
-      stats: '25,000+ Workers'
+      stats: "25,000+ Workers",
     },
     {
-      year: '2025',
-      quarter: 'Q1',
-      title: '35,000+ Active Workers',
-      description: 'Achieved unprecedented growth with over 35,000 active workers and 50+ satisfied clients.',
+      year: "2025",
+      quarter: "Q1",
+      title: "35,000+ Active Workers",
+      description:
+        "Achieved unprecedented growth with over 35,000 active workers and 50+ satisfied clients.",
       icon: Trophy,
-      stats: '35,000+ Workers'
-    }
+      stats: "35,000+ Workers",
+    },
   ];
 
   const achievements = [
-    { number: '35,000+', label: 'Active Workers', color: 'blue' },
-    { number: '500+', label: 'Projects Completed', color: 'green' },
-    { number: '50+', label: 'Trusted Clients', color: 'yellow' },
-    { number: '6', label: 'Cities Presence', color: 'purple' }
+    { number: "35,000+", label: "Active Workers", color: "blue" },
+    { number: "500+", label: "Projects Completed", color: "green" },
+    { number: "50+", label: "Trusted Clients", color: "yellow" },
+    { number: "6", label: "Cities Presence", color: "purple" },
   ];
 
   const getColorClasses = (color) => {
     const colorMap = {
-      blue: 'from-blue-500 to-blue-600',
-      green: 'from-green-500 to-green-600',
-      yellow: 'from-yellow-500 to-yellow-600',
-      purple: 'from-purple-500 to-purple-600'
+      blue: "from-blue-500 to-blue-600",
+      green: "from-green-500 to-green-600",
+      yellow: "from-yellow-500 to-yellow-600",
+      purple: "from-purple-500 to-purple-600",
     };
     return colorMap[color] || colorMap.blue;
   };
 
   return (
-    <section id="milestones" className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-x-hidden">
+    <section
+      id="milestones"
+      className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-x-hidden"
+    >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Our <span className="text-blue-600">Journey</span>
+            Our <span className="text-yellow-500">Journey</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            From our inception in 2023 to becoming India's trusted manpower partner, 
-            here are the key milestones that define our growth story.
+            From our inception in 2023 to becoming India's trusted manpower
+            partner, here are the key milestones that define our growth story.
           </motion.p>
         </motion.div>
 
         {/* Achievement Stats */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 lg:mb-20">
           {achievements.map((achievement, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="text-center"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -115,10 +124,18 @@ const MilestonesSection = () => {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <div className={`bg-gradient-to-r ${getColorClasses(achievement.color)} rounded-2xl p-4 sm:p-6 text-white mb-4`}>
-                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">{achievement.number}</div>
+              <div
+                className={`bg-gradient-to-r ${getColorClasses(
+                  achievement.color
+                )} rounded-2xl p-4 sm:p-6 text-white mb-4`}
+              >
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                  {achievement.number}
+                </div>
               </div>
-              <div className="text-gray-900 font-semibold">{achievement.label}</div>
+              <div className="text-gray-900 font-semibold">
+                {achievement.label}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -132,31 +149,50 @@ const MilestonesSection = () => {
             {milestones.map((milestone, index) => {
               const Icon = milestone.icon;
               const isEven = index % 2 === 0;
-              
+
               return (
-                <div key={index} className={`relative flex items-start lg:items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                <div
+                  key={index}
+                  className={`relative flex items-start lg:items-center ${
+                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
+                >
                   {/* Timeline dot - Mobile: left-aligned, Desktop: center */}
-                  <div className="absolute left-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-3 h-3 lg:w-4 lg:h-4 bg-blue-600 rounded-full border-2 lg:border-4 border-white shadow-lg z-10"></div>
-                  
+                  <div className="absolute left-6 lg:left-1/2 lg:transform lg:-translate-x-1/2 top-6 lg:top-1/2 lg:-translate-y-1/2 w-3 h-3 lg:w-4 lg:h-4 bg-yellow-500 rounded-full border-2 lg:border-2 border-white shadow-lg z-10"></div>
+
                   {/* Content - Mobile: left margin, Desktop: alternating */}
-                  <div className={`w-full ml-12 lg:ml-0 lg:w-1/2 ${isEven ? 'lg:pr-8' : 'lg:pl-8'}`}>
-                    <div className={`bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 ${isEven ? 'lg:mr-8' : 'lg:ml-8'}`}>
+                  <div
+                    className={`w-full ml-12 lg:ml-0 lg:w-1/2 ${
+                      isEven ? "lg:pr-8" : "lg:pl-8"
+                    }`}
+                  >
+                    <div
+                      className={`bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100 ${
+                        isEven ? "lg:mr-8" : "lg:ml-8"
+                      }`}
+                    >
                       <div className="flex items-start sm:items-center mb-4">
-                        <div className="bg-blue-100 p-2 sm:p-3 rounded-xl flex-shrink-0">
-                          <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-blue-600" />
+                        <div className="bg-yellow-500 p-2 sm:p-3 rounded-xl flex-shrink-0">
+                          <Icon className="h-4 w-4 sm:h-6 sm:w-6 text-black" />
                         </div>
                         <div className="ml-3 sm:ml-4 min-w-0">
-                          <div className="text-xs sm:text-sm font-semibold text-blue-600">{milestone.year} {milestone.quarter}</div>
-                          <div className="text-sm sm:text-lg font-bold text-gray-900 leading-tight">{milestone.title}</div>
+                          <div className="text-xs sm:text-sm font-semibold text-blue-600">
+                            {milestone.year} {milestone.quarter}
+                          </div>
+                          <div className="text-sm sm:text-lg font-bold text-gray-900 leading-tight">
+                            {milestone.title}
+                          </div>
                         </div>
                       </div>
-                      
+
                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
                         {milestone.description}
                       </p>
-                      
+
                       <div className="bg-blue-50 rounded-lg p-2 sm:p-3 inline-block">
-                        <span className="text-xs sm:text-sm text-blue-800 font-semibold">{milestone.stats}</span>
+                        <span className="text-xs sm:text-sm text-blue-800 font-semibold">
+                          {milestone.stats}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -168,24 +204,33 @@ const MilestonesSection = () => {
 
         {/* Future Vision */}
         <div className="mt-12 lg:mt-20 text-center">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl lg:rounded-3xl p-6 sm:p-8 md:p-12 text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Looking Ahead</h3>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-              As we continue to grow, our commitment remains unchanged: to be India's most trusted 
-              manpower partner, driving infrastructure development and creating opportunities for millions of workers.
+          <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-2xl lg:rounded-3xl p-6 sm:p-8 md:p-12 text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">
+              Looking Ahead
+            </h3>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              As we continue to grow, our commitment remains unchanged: to be
+              India's most trusted manpower partner, driving infrastructure
+              development and creating opportunities for millions of workers.
             </p>
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold">2025 Goal</div>
-                <div className="text-blue-200">50,000+ Workers</div>
+                <div className="text-2xl font-bold text-yellow-500">
+                  2025 Goal
+                </div>
+                <div className="text-gray-300">50,000+ Workers</div>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold">2026 Vision</div>
-                <div className="text-blue-200">10+ Cities</div>
+                <div className="text-2xl font-bold text-yellow-500">
+                  2026 Vision
+                </div>
+                <div className="text-gray-300">10+ Cities</div>
               </div>
               <div className="bg-white/10 rounded-xl p-6">
-                <div className="text-2xl font-bold">2027 Mission</div>
-                <div className="text-blue-200">100+ Clients</div>
+                <div className="text-2xl font-bold text-yellow-500">
+                  2027 Mission
+                </div>
+                <div className="text-gray-300">100+ Clients</div>
               </div>
             </div>
           </div>

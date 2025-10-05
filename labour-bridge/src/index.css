@@ -114,3 +114,20 @@ body {
     min-width: 44px;
   }
 }
+
+/* Client carousel styles */
+.carousel-container {
+  position: relative;
+}
+
+.carousel-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.carousel-button:hover {
+  transform: scale(1.1);
+}
+
+.carousel-button:active {
+  transform: scale(0.95);
+}

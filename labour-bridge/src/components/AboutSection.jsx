@@ -1,45 +1,96 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Target, Eye, Heart } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { MapPin, Target, Eye, Heart } from "lucide-react";
 
 const AboutSection = () => {
   const values = [
-    { icon: Heart, title: 'Integrity', description: 'Maintaining honesty and transparency in all our dealings' },
-    { icon: Target, title: 'Excellence', description: 'Delivering superior quality services that exceed expectations' },
-    { icon: Eye, title: 'Reliability', description: 'Consistent and dependable manpower solutions you can trust' },
-    { icon: MapPin, title: 'Safety', description: 'Prioritizing worker safety and workplace security standards' }
+    {
+      icon: Heart,
+      title: "Integrity",
+      description: "Maintaining honesty and transparency in all our dealings",
+    },
+    {
+      icon: Target,
+      title: "Excellence",
+      description:
+        "Delivering superior quality services that exceed expectations",
+    },
+    {
+      icon: Eye,
+      title: "Reliability",
+      description: "Consistent and dependable manpower solutions you can trust",
+    },
+    {
+      icon: MapPin,
+      title: "Safety",
+      description:
+        "Prioritizing worker safety and workplace security standards",
+    },
   ];
 
   const leadership = [
-    { name: 'Ajay Sharma', role: 'CEO & Founder Director', image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?w=150&h=150&fit=crop&crop=face&auto=format' },
-    { name: 'Rakesh Kumar', role: 'General Manager, Operations', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-    { name: 'Dola S.', role: 'Partner, Resource Planning', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face&auto=format' },
-    { name: 'Sanata Das', role: 'Key Account Manager', image: 'https://media.istockphoto.com/id/2194397238/photo/focused-professional-financial-it-specialist-latin-hispanic-business-lady-working-on-laptop.webp?a=1&b=1&s=612x612&w=0&k=20&c=nrVXn1b3yL_5UWInzFGMn5s64tXeKjnSEI559AiWHnE=' },
-    { name: 'Tapashendra Paul', role: 'Resource Officer', image: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=150&h=150&fit=crop&crop=face&auto=format' },
-    { name: 'Shubajit Bhattacharjee', role: 'Supervisor Lead', image: 'https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=150&h=150&fit=crop&crop=face&auto=format' }
+    {
+      name: "Ajay Sharma",
+      role: "CEO & Founder Director",
+      image:
+        "https://media.istockphoto.com/id/2187592265/photo/portrait-of-middle-eastern-businessman-looking-at-camera.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q1rXlEPB326P2x0c5RdtszI2_qx03P_WMhaakDFhng4=",
+    },
+    {
+      name: "Mriganka Dey",
+      role: "Independent Director, Client Management",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Aniket Sharma",
+      role: "Partner, Resource Planning",
+      image:
+        "https://images.unsplash.com/photo-1718209881007-c0ecdfc00f9d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1c2luZXNzJTIwbWFufGVufDB8fDB8fHww",
+    },
+    {
+      name: "Manoshi Dey",
+      role: "Independent Director - Finance Management",
+      image:
+        "https://media.istockphoto.com/id/2194397238/photo/focused-professional-financial-it-specialist-latin-hispanic-business-lady-working-on-laptop.webp?a=1&b=1&s=612x612&w=0&k=20&c=nrVXn1b3yL_5UWInzFGMn5s64tXeKjnSEI559AiWHnE=",
+    },
+    {
+      name: "Sunil K Nair",
+      role: "General Manager - Business Development",
+      image:
+        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=150&h=150&fit=crop&crop=face&auto=format",
+    },
+    {
+      name: "Shubajit Bhattacharjee",
+      role: "Supervisor Lead",
+      image:
+        "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=150&h=150&fit=crop&crop=face&auto=format",
+    },
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 md:py-20 bg-gray-50 w-full overflow-x-hidden">
+    <section
+      id="about"
+      className="py-12 sm:py-16 md:py-20 bg-gray-50 w-full overflow-x-hidden"
+    >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Company Overview */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            About <span className="text-blue-600">LABOURBridge India</span>
+            About <span className="text-yellow-500">LABOURBridge India</span>
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,10 +98,11 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-8">
-              LABOURBridge India is a leading manpower outsourcing and labor supply company in India, 
-              offering end-to-end staffing solutions. Headquartered in Chennai with regional offices 
-              in Hyderabad, Mumbai, Kerala, Gujarat, and Kolkata, we are committed to timely deployment, 
-              customized solutions, and complete compliance.
+              LABOURBridge India is a leading manpower outsourcing and labor
+              supply company in India, offering end-to-end staffing solutions.
+              Headquartered in Chennai with regional offices in Hyderabad,
+              Mumbai, Kerala, Gujarat, and Kolkata, we are committed to timely
+              deployment, customized solutions, and complete compliance.
             </p>
           </motion.div>
         </motion.div>
@@ -58,30 +110,36 @@ const AboutSection = () => {
         {/* Vision & Mission */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
           {/* Vision */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
             <div className="flex items-center mb-6">
-              <div className="bg-blue-100 p-3 rounded-xl">
-                <Eye className="h-8 w-8 text-blue-600" />
+              <div className="bg-yellow-400 p-3 rounded-xl">
+                <Eye className="h-8 w-8 text-black-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Vision</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4">
+                Our Vision
+              </h3>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
-              To be India's most trusted and innovative manpower provider, setting industry standards 
-              for excellence in workforce solutions and contributing to the nation's infrastructure development.
+              To be India's most trusted and innovative manpower provider,
+              setting industry standards for excellence in workforce solutions
+              and contributing to the nation's infrastructure development.
             </p>
           </div>
 
           {/* Mission */}
-          <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div className="bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
             <div className="flex items-center mb-6">
-              <div className="bg-yellow-100 p-3 rounded-xl">
-                <Target className="h-8 w-8 text-yellow-600" />
+              <div className="bg-yellow-400 p-3 rounded-xl">
+                <Target className="h-8 w-8 text-black-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">Our Mission</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4">
+                Our Mission
+              </h3>
             </div>
             <p className="text-gray-600 text-lg leading-relaxed">
-              To deliver reliable, cost-effective, and efficient manpower solutions that enable our 
-              clients to focus on their core business while we manage their workforce requirements with precision.
+              To deliver reliable, cost-effective, and efficient manpower
+              solutions that enable our clients to focus on their core business
+              while we manage their workforce requirements with precision.
             </p>
           </div>
         </div>
@@ -89,21 +147,29 @@ const AboutSection = () => {
         {/* Core Values */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Core Values</h3>
-            <p className="text-xl text-gray-600">The principles that guide everything we do</p>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Core Values
+            </h3>
+            <p className="text-xl text-gray-600">
+              The principles that guide everything we do
+            </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <div key={index} className="text-center group">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
-                    <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-xl inline-block mb-4">
-                      <Icon className="h-8 w-8 text-white" />
+                  <div className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 group-hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2">
+                    <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-4 rounded-xl inline-block mb-4">
+                      <Icon className="h-8 w-8 text-black" />
                     </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                    <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                    <h4 className="text-xl font-bold text-gray-900 mb-3">
+                      {value.title}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {value.description}
+                    </p>
                   </div>
                 </div>
               );
@@ -112,25 +178,38 @@ const AboutSection = () => {
         </div>
 
         {/* Leadership Team */}
-        <div>
+        <div className="mb-18">
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Leadership Team</h3>
-            <p className="text-xl text-gray-600">Meet the experienced professionals driving our success</p>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Leadership Team
+            </h3>
+            <p className="text-xl text-gray-600">
+              Meet the experienced professionals driving our success
+            </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadership.map((leader, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-all duration-300">
-                <img 
-                  src={leader.image} 
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+              >
+                <img
+                  src={leader.image}
                   alt={`${leader.name} - ${leader.role}`}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-100 group-hover:border-blue-300 transition-colors object-cover shadow-md"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-100 group-hover:border-yellow-300 transition-colors object-cover shadow-md"
                   onError={(e) => {
-                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(leader.name)}&background=3B82F6&color=fff&size=150`;
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
+                      leader.name
+                    )}&background=3B82F6&color=fff&size=150`;
                   }}
                 />
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h4>
-                <p className="text-blue-600 font-medium">{leader.role}</p>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                  {leader.name}
+                </h4>
+                <p className="text-gray-600 font-medium">
+                  {leader.role}
+                </p>
               </div>
             ))}
           </div>
