@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Clients", href: "#clients" },
-    { name: "Projects", href: "#projects" },
-    { name: "Milestones", href: "#milestones" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Home", href: "/", type: "route" },
+    { name: "About Us", href: "/about", type: "route" },
+    { name: "Services", href: "/#services", type: "hash" },
+    { name: "Clients", href: "/#clients", type: "hash" },
+    { name: "Projects", href: "/#projects", type: "hash" },
+    { name: "Milestones", href: "/milestones", type: "route" },
+    { name: "Contact Us", href: "/contact", type: "route" },
   ];
 
   const toggleMenu = () => {
@@ -23,7 +25,10 @@ const Navbar = () => {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 flex items-center opacity-0 animate-fade-in">
+          <Link
+            to="/"
+            className="flex-shrink-0 flex items-center opacity-0 animate-fade-in"
+          >
             <img
               src="/logo.jpg"
               alt="LABOURBridge India Logo"
@@ -37,24 +42,41 @@ const Navbar = () => {
                 India
               </p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
             <div className="flex items-center space-x-6">
               <div className="flex items-baseline space-x-4">
-                {navLinks.map((link, index) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-gray-700 hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:scale-105 transform"
-                    style={{
-                      animation: `fadeInUp 0.5s ease-out ${index * 0.1}s both`,
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                ))}
+                {navLinks.map((link, index) =>
+                  link.type === "route" ? (
+                    <Link
+                      key={link.name}
+                      to={link.href}
+                      className="text-gray-700 hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:scale-105 transform"
+                      style={{
+                        animation: `fadeInUp 0.5s ease-out ${
+                          index * 0.1
+                        }s both`,
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      className="text-gray-700 hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-semibold transition-all duration-200 hover:scale-105 transform"
+                      style={{
+                        animation: `fadeInUp 0.5s ease-out ${
+                          index * 0.1
+                        }s both`,
+                      }}
+                    >
+                      {link.name}
+                    </a>
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -95,7 +117,11 @@ const Navbar = () => {
             <div className="flex flex-col h-full">
               {/* Sidebar Header */}
               <div className="flex items-center justify-between p-3 border-b border-gray-200 min-h-[60px]">
-                <div className="flex items-center min-w-0 flex-1">
+                <Link
+                  to="/"
+                  onClick={toggleMenu}
+                  className="flex items-center min-w-0 flex-1"
+                >
                   <img
                     src="/logo.jpg"
                     alt="LABOURBridge India Logo"
@@ -109,7 +135,7 @@ const Navbar = () => {
                       India
                     </p>
                   </div>
-                </div>
+                </Link>
                 <button
                   onClick={toggleMenu}
                   className="p-1.5 rounded-md text-gray-700 hover:text-blue-500 hover:bg-gray-100 transition-colors duration-200 flex-shrink-0 ml-2"
@@ -121,21 +147,37 @@ const Navbar = () => {
               {/* Navigation Links */}
               <div className="flex-1 px-4 py-6">
                 <nav className="space-y-2">
-                  {navLinks.map((link, index) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      onClick={toggleMenu}
-                      className="block px-4 py-3 text-gray-700 hover:text-blue-500 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:translate-x-2 transform"
-                      style={{
-                        animation: `fadeInLeft 0.3s ease-out ${
-                          index * 0.1 + 0.2
-                        }s both`,
-                      }}
-                    >
-                      {link.name}
-                    </a>
-                  ))}
+                  {navLinks.map((link, index) =>
+                    link.type === "route" ? (
+                      <Link
+                        key={link.name}
+                        to={link.href}
+                        onClick={toggleMenu}
+                        className="block px-4 py-3 text-gray-700 hover:text-blue-500 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:translate-x-2 transform"
+                        style={{
+                          animation: `fadeInLeft 0.3s ease-out ${
+                            index * 0.1 + 0.2
+                          }s both`,
+                        }}
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        key={link.name}
+                        href={link.href}
+                        onClick={toggleMenu}
+                        className="block px-4 py-3 text-gray-700 hover:text-blue-500 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:translate-x-2 transform"
+                        style={{
+                          animation: `fadeInLeft 0.3s ease-out ${
+                            index * 0.1 + 0.2
+                          }s both`,
+                        }}
+                      >
+                        {link.name}
+                      </a>
+                    )
+                  )}
                 </nav>
               </div>
             </div>

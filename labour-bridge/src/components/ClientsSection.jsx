@@ -40,22 +40,22 @@ const ClientCarousel = ({ clients }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, [visibleCount]);
 
-  // Create extended client list for seamless loop (duplicate for infinite scroll)
-  const extendedClients = [...clients, ...clients];
+  // Create extended client list for seamless loop (triple for smoother infinite scroll)
+  const extendedClients = [...clients, ...clients, ...clients];
   const totalClients = clients.length;
 
-  // Handle infinite loop reset
+  // Handle infinite loop reset for seamless animation
   React.useEffect(() => {
-    if (currentIndex >= totalClients) {
-      // Reset to beginning without animation
+    if (currentIndex >= totalClients * 2) {
+      // Reset to middle section without animation
       setTimeout(() => {
-        setCurrentIndex(0);
-      }, 500); // Wait for animation to complete
+        setCurrentIndex(totalClients);
+      }, 300);
     } else if (currentIndex < 0) {
-      // Reset to end without animation
+      // Reset to middle section from end
       setTimeout(() => {
         setCurrentIndex(totalClients - 1);
-      }, 500);
+      }, 300);
     }
   }, [currentIndex, totalClients]);
 
@@ -79,25 +79,25 @@ const ClientCarousel = ({ clients }) => {
         {/* Left Arrow */}
         <button
           onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 sm:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
+          className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
           aria-label="Previous clients"
         >
-          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
+          <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-gray-600" />
         </button>
 
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 sm:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
+          className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
           aria-label="Next clients"
         >
-          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-gray-600" />
+          <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-gray-600" />
         </button>
 
         {/* Carousel Container */}
-        <div className="overflow-hidden mx-4 sm:mx-6 md:mx-8">
+        <div className="overflow-hidden mx-8 md:mx-8">
           <motion.div
-            className="flex transition-transform duration-500 ease-in-out"
+            className="flex transition-transform duration-300 ease-out"
             style={{
               transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
             }}
@@ -111,10 +111,10 @@ const ClientCarousel = ({ clients }) => {
                 <motion.img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-h-20 sm:max-h-24 md:max-h-28 w-auto object-contain opacity-100 transition-all duration-300 cursor-pointer"
+                  className="max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain opacity-100 transition-all duration-200 cursor-pointer"
                   whileHover={{
-                    scale: 1.15,
-                    transition: { duration: 0.3, ease: "easeOut" },
+                    scale: 1.1,
+                    transition: { duration: 0.2, ease: "easeOut" },
                   }}
                   onError={(e) => {
                     e.target.src = `https://via.placeholder.com/150x60/3B82F6/FFFFFF?text=${encodeURIComponent(
@@ -175,7 +175,7 @@ const ClientsSection = () => {
     },
     {
       name: "Robomatic Precon pvt Ltd",
-      logo: "/public/robomatic-logo.jpeg",
+      logo: "/robomatic-logo.jpeg",
     },
     {
       name: "KEC",

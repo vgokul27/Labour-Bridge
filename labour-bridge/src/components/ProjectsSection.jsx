@@ -98,7 +98,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-12 sm:py-16 md:py-20 bg-white w-full overflow-x-hidden"
+      className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 bg-white w-full overflow-x-hidden"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
