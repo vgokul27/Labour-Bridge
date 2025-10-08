@@ -68,7 +68,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 text-yellow-400 mr-3 flex-shrink-0" />
-                <span className="text-gray-300">info@labourbridgesindia.com</span>
+                <span className="text-gray-300">
+                  info@labourbridgesindia.com
+                </span>
               </div>
             </div>
 
@@ -87,7 +89,9 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/1CjVmWWBBc/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-yellow-500 hover:text-black p-3 rounded-lg transition-colors"
               >
                 <Facebook className="h-5 w-5" />
