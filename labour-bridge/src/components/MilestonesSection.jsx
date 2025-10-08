@@ -1,6 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Trophy, Users, Target } from "lucide-react";
+import {
+  Calendar,
+  Trophy,
+  Users,
+  Target,
+  Smartphone,
+  Database,
+  MapPin,
+  Bot,
+  Star,
+  Quote,
+  Award,
+  Shield,
+} from "lucide-react";
 
 const MilestonesSection = () => {
   const milestones = [
@@ -201,6 +214,375 @@ const MilestonesSection = () => {
             })}
           </div>
         </div>
+
+        {/* Technology & Innovation Section */}
+        <motion.div
+          className="mt-12 lg:mt-20 mb-12 lg:mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Technology & <span className="text-yellow-500">Innovation</span>{" "}
+              in Manpower Management
+            </h3>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Technology is the backbone of LABOURBridge's operations, enabling
+              scale, safety, and speed.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Digital Attendance Tracking */}
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-yellow-500 p-3 rounded-xl">
+                  <Smartphone className="h-8 w-8 text-black" />
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 ml-4">
+                  Digital Attendance Tracking
+                </h4>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <MapPin className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    GPS-verified attendance apps for daily site check-ins
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Target className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Real-time updates to client dashboards</span>
+                </li>
+                <li className="flex items-start">
+                  <Users className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>Biometric & QR-code enabled time sheets</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Worker ID and Compliance Database */}
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-yellow-500 p-3 rounded-xl">
+                  <Database className="h-8 w-8 text-black" />
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 ml-4">
+                  Worker ID & Compliance Database
+                </h4>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <Shield className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Every worker is issued a LABOURBridge ID with QR scan
+                    history
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Database className="h-5 w-5 text-yellow-500 mr-3 mt-0.5 flex-shrink-0" />
+                  <span>
+                    Linked to their skill, location history, wages, PF/ESI
+                    number
+                  </span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Mobile Operations Team App */}
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-yellow-500 p-3 rounded-xl">
+                  <Smartphone className="h-8 w-8 text-black" />
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 ml-4">
+                  Mobile Operations Team App
+                </h4>
+              </div>
+              <p className="text-gray-600 mb-4">
+                Field teams use an in-house mobile app for:
+              </p>
+              <ul className="space-y-2 text-gray-600">
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                  <span>Demand forecasting</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                  <span>Recruitment tracking</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                  <span>Incident reporting</span>
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3"></div>
+                  <span>Worker grievance redressal</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* AI-based Workforce Allocation */}
+            <motion.div
+              className="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-3xl p-8 shadow-xl border border-yellow-200"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-yellow-500 p-3 rounded-xl">
+                  <Bot className="h-8 w-8 text-black" />
+                </div>
+                <h4 className="text-2xl font-bold text-gray-900 ml-4">
+                  AI-based Workforce Allocation
+                </h4>
+              </div>
+              <div className="bg-yellow-200 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold inline-block mb-4">
+                Upcoming 2025
+              </div>
+              <p className="text-gray-700">
+                Using historical project trends and skill profiles to
+                auto-recommend the right team for upcoming jobs
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Testimonials Section */}
+        <motion.div
+          className="mt-12 lg:mt-20 mb-12 lg:mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              Client <span className="text-yellow-500">Testimonials</span>
+            </h3>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Hear what our clients say about our services and commitment to
+              excellence.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Quote className="h-8 w-8 text-yellow-500 mb-4" />
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                "LABOURBridge has consistently delivered skilled manpower across
+                our project sites in Hyderabad and Gujarat. Their attention to
+                detail, safety, and daily follow-ups are unmatched."
+              </p>
+              <div className="flex items-center">
+                <div className="bg-yellow-100 p-2 rounded-full mr-3">
+                  <Star className="h-5 w-5 text-yellow-500" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">
+                    Project Head
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    KEC International Ltd
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Quote className="h-8 w-8 text-yellow-500 mb-4" />
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                "During our Smart City Infra deployment in Telangana,
+                LABOURBridge deployed over 200 skilled workers within 3 days.
+                Their responsiveness is a major asset."
+              </p>
+              <div className="flex items-center">
+                <div className="bg-yellow-100 p-2 rounded-full mr-3">
+                  <Trophy className="h-5 w-5 text-yellow-500" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">
+                    Procurement Manager
+                  </div>
+                  <div className="text-sm text-gray-600">NCC Limited</div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Quote className="h-8 w-8 text-yellow-500 mb-4" />
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                "For our robotic automation project, we required highly specific
+                trades. LABOURBridge's team understood our needs better than
+                most technical firms. Highly recommended."
+              </p>
+              <div className="flex items-center">
+                <div className="bg-yellow-100 p-2 rounded-full mr-3">
+                  <Award className="h-5 w-5 text-yellow-500" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">Founder</div>
+                  <div className="text-sm text-gray-600">
+                    Robomatics Hyderabad
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <Quote className="h-8 w-8 text-yellow-500 mb-4" />
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                "More than a manpower agency, LABOURBridge feels like an
+                extended project team. We've had 2 years of partnership with
+                zero disputes."
+              </p>
+              <div className="flex items-center">
+                <div className="bg-yellow-100 p-2 rounded-full mr-3">
+                  <Users className="h-5 w-5 text-yellow-500" />
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-900">
+                    Project Supervisor
+                  </div>
+                  <div className="text-sm text-gray-600">TATA Projects</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Media & Recognition Section */}
+        <motion.div
+          className="mt-12 lg:mt-20 mb-12 lg:mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-gray-50 rounded-3xl p-8 lg:p-12">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Media & <span className="text-yellow-500">Recognition</span>
+              </h3>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                M/s LABOURBridge India has been featured in regional and trade
+                publications for its ethical workforce practices and high-volume
+                staffing capabilities.
+              </p>
+            </div>
+
+            {/* Media Highlights */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <div className="text-2xl font-bold text-yellow-500 mb-2">
+                  2023
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Featured in Construction India Today magazine for "Smart
+                  Labour Deployment Model"
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <div className="text-2xl font-bold text-yellow-500 mb-2">
+                  2024
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Recognized by Labour India Forum as one of the "Top 10
+                  Workforce Solution Providers – Infrastructure Sector"
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 shadow-lg">
+                <div className="text-2xl font-bold text-yellow-500 mb-2">
+                  2025
+                </div>
+                <p className="text-gray-700 text-sm">
+                  Invited to speak at BuildTech Conclave for showcasing our
+                  digital hiring model
+                </p>
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="bg-white rounded-2xl p-8">
+              <h4 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Certifications & Compliance
+              </h4>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="text-gray-700">MSME Registered</span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="text-gray-700">GST Registered</span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="text-gray-700">
+                    ESIC/EPF Compliant Vendor
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="text-gray-700">
+                    Registered under Contract Labour Act
+                  </span>
+                </div>
+                <div className="flex items-center">
+                  <Shield className="h-5 w-5 text-green-500 mr-3" />
+                  <span className="text-gray-700">
+                    PAN India Labour License
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Future Vision */}
         <div className="mt-12 lg:mt-20 text-center">

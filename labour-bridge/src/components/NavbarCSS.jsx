@@ -11,7 +11,7 @@ const Navbar = () => {
     { name: "About Us", href: "/about", type: "route" },
     { name: "Services", href: "/#services", type: "hash" },
     { name: "Clients", href: "/#clients", type: "hash" },
-    { name: "Projects", href: "/#projects", type: "hash" },
+    { name: "Projects", href: "/projects", type: "route" },
     { name: "Milestones", href: "/milestones", type: "route" },
     { name: "Contact Us", href: "/contact", type: "route" },
   ];
@@ -27,16 +27,16 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex-shrink-0 flex items-center opacity-0 animate-fade-in"
+            className="flex-shrink-0 flex items-center opacity-0 animate-fade-in hover:opacity-80 transition-all duration-300"
           >
             <img
               src="/logo.jpg"
               alt="LABOURBridge India Logo"
-              className="h-8 sm:h-10 w-auto mr-2 sm:mr-3"
+              className="h-10 sm:h-12 w-auto object-contain drop-shadow-sm hover:drop-shadow-md transition-all duration-300 mr-3"
             />
             <div>
               <h1 className="text-lg sm:text-xl font-bold text-gray-800 leading-tight">
-                LABOURBridge
+                LABOUR BRIDGE
               </h1>
               <p className="text-xs sm:text-sm text-blue-600 font-medium -mt-1">
                 India
@@ -120,16 +120,16 @@ const Navbar = () => {
                 <Link
                   to="/"
                   onClick={toggleMenu}
-                  className="flex items-center min-w-0 flex-1"
+                  className="flex items-center min-w-0 flex-1 hover:opacity-80 transition-opacity duration-300"
                 >
                   <img
                     src="/logo.jpg"
                     alt="LABOURBridge India Logo"
-                    className="h-6 w-auto mr-2 flex-shrink-0"
+                    className="h-8 w-auto flex-shrink-0 object-contain drop-shadow-sm mr-3"
                   />
                   <div className="min-w-0">
                     <h2 className="text-sm font-bold text-gray-800 leading-tight truncate">
-                      LABOURBridge
+                      LABOUR BRIDGE
                     </h2>
                     <p className="text-xs text-blue-600 font-medium -mt-1 truncate">
                       India

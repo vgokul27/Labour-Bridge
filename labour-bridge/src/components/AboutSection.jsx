@@ -32,38 +32,32 @@ const AboutSection = () => {
     {
       name: "Ajay Sharma",
       role: "CEO & Founder Director",
-      image:
-        "https://media.istockphoto.com/id/2187592265/photo/portrait-of-middle-eastern-businessman-looking-at-camera.webp?a=1&b=1&s=612x612&w=0&k=20&c=Q1rXlEPB326P2x0c5RdtszI2_qx03P_WMhaakDFhng4=",
+      image: "ajay-sharma.jpg",
     },
     {
       name: "Mriganka Dey",
       role: "Independent Director, Client Management",
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "mriganka-dey.jpg",
     },
     {
       name: "Aniket Sharma",
       role: "Partner, Resource Planning",
-      image:
-        "https://images.unsplash.com/photo-1718209881007-c0ecdfc00f9d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJ1c2luZXNzJTIwbWFufGVufDB8fDB8fHww",
+      image: "aniket.jpg",
     },
     {
-      name: "Manoshi Dey",
+      name: "Ms. Manasi Dey",
       role: "Independent Director - Finance Management",
-      image:
-        "https://media.istockphoto.com/id/2194397238/photo/focused-professional-financial-it-specialist-latin-hispanic-business-lady-working-on-laptop.webp?a=1&b=1&s=612x612&w=0&k=20&c=nrVXn1b3yL_5UWInzFGMn5s64tXeKjnSEI559AiWHnE=",
+      image: "manasi-dey.jpg",
     },
     {
       name: "Sunil K Nair",
       role: "General Manager - Business Development",
-      image:
-        "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=150&h=150&fit=crop&crop=face&auto=format",
+      image: "sunil.jpg",
     },
     {
-      name: "Shubajit Bhattacharjee",
-      role: "Supervisor Lead",
-      image:
-        "https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=150&h=150&fit=crop&crop=face&auto=format",
+      name: "Mahaveer Chowdhry",
+      role: "Site Supervisor - Orrisa & Surat",
+      image: "mahaveer-chowdhry.jpg",
     },
   ];
 
@@ -197,7 +191,7 @@ const AboutSection = () => {
                 <img
                   src={leader.image}
                   alt={`${leader.name} - ${leader.role}`}
-                  className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-100 group-hover:border-yellow-300 transition-colors object-cover shadow-md"
+                  className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-100 group-hover:border-yellow-300 transition-colors object-cover shadow-md"
                   onError={(e) => {
                     e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
                       leader.name
@@ -207,9 +201,7 @@ const AboutSection = () => {
                 <h4 className="text-xl font-bold text-gray-900 mb-2">
                   {leader.name}
                 </h4>
-                <p className="text-gray-600 font-medium">
-                  {leader.role}
-                </p>
+                <p className="text-gray-600 font-medium">{leader.role}</p>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@ import Navbar from "./components/NavbarCSS";
 import HeroSection from "./components/HeroSection";
 import ServicesSection from "./components/ServicesSection";
 import ClientsSection from "./components/ClientsSection";
-import ProjectsSection from "./components/ProjectsSection";
+import OngoingProjectsSection from "./components/OngoingProjectsSection";
 import Footer from "./components/Footer";
 
 function App() {
@@ -25,9 +25,9 @@ function App() {
         <ClientsSection />
       </div>
 
-      {/* Key Projects Section */}
-      <div id="projects">
-        <ProjectsSection />
+      {/* Ongoing Projects Section */}
+      <div id="ongoing-projects">
+        <OngoingProjectsSection />
       </div>
 
       {/* Footer */}
