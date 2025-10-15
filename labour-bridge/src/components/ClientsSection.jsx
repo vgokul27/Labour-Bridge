@@ -11,61 +11,8 @@ import {
 
 // Client Carousel Component
 const ClientCarousel = ({ clients }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Number of visible items based on screen size
-  const getVisibleCount = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth >= 768) return 4; // Desktop: 4 items
-      if (window.innerWidth >= 480) return 3; // Tablet: 3 items
-      return 2; // Small mobile: 2 items
-    }
-    return 4;
-  };
-
-  const [visibleCount, setVisibleCount] = useState(getVisibleCount);
-
-  // Update visible count on window resize and reset position
-  React.useEffect(() => {
-    const handleResize = () => {
-      const newVisibleCount = getVisibleCount();
-      if (newVisibleCount !== visibleCount) {
-        setVisibleCount(newVisibleCount);
-        // Reset to safe position on resize to avoid layout issues
-        setCurrentIndex(0);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [visibleCount]);
-
-  // Create extended client list for seamless loop (triple for smoother infinite scroll)
-  const extendedClients = [...clients, ...clients, ...clients];
-  const totalClients = clients.length;
-
-  // Handle infinite loop reset for seamless animation
-  React.useEffect(() => {
-    if (currentIndex >= totalClients * 2) {
-      // Reset to middle section without animation
-      setTimeout(() => {
-        setCurrentIndex(totalClients);
-      }, 300);
-    } else if (currentIndex < 0) {
-      // Reset to middle section from end
-      setTimeout(() => {
-        setCurrentIndex(totalClients - 1);
-      }, 300);
-    }
-  }, [currentIndex, totalClients]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => prev + 1);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => prev - 1);
-  };
+  // Create duplicate sets for seamless infinite scroll
+  const duplicatedClients = [...clients, ...clients];
 
   return (
     <motion.div
@@ -76,42 +23,35 @@ const ClientCarousel = ({ clients }) => {
       viewport={{ once: true }}
     >
       <div className="relative">
-        {/* Left Arrow */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-0 md:left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
-          aria-label="Previous clients"
-        >
-          <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-gray-600" />
-        </button>
-
-        {/* Right Arrow */}
-        <button
-          onClick={nextSlide}
-          className="absolute right-0 md:right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-4 z-10 bg-white shadow-lg rounded-full p-2 md:p-3 hover:bg-gray-50 transition-all duration-200 hover:scale-110"
-          aria-label="Next clients"
-        >
-          <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-gray-600" />
-        </button>
-
         {/* Carousel Container */}
-        <div className="overflow-hidden mx-8 md:mx-8">
+        <div className="overflow-hidden">
           <motion.div
-            className="flex transition-transform duration-300 ease-out"
+            className="flex"
+            animate={{
+              x: [0, -200 * clients.length],
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 30, // Adjust speed here
+                ease: "linear",
+              },
+            }}
             style={{
-              transform: `translateX(-${currentIndex * (100 / visibleCount)}%)`,
+              width: `${duplicatedClients.length * 200}px`,
             }}
           >
-            {extendedClients.map((client, index) => (
+            {duplicatedClients.map((client, index) => (
               <div
                 key={`client-${index}`}
-                className="flex items-center justify-center flex-shrink-0 px-2 sm:px-3 md:px-4"
-                style={{ width: `${100 / visibleCount}%` }}
+                className="flex items-center justify-center flex-shrink-0"
+                style={{ width: "200px" }}
               >
                 <motion.img
                   src={client.logo}
                   alt={`${client.name} logo`}
-                  className="max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain opacity-100 transition-all duration-200 cursor-pointer"
+                  className="max-h-12 sm:max-h-16 md:max-h-20 lg:max-h-24 w-auto object-contain opacity-100 transition-all duration-200 cursor-pointer mx-4"
                   whileHover={{
                     scale: 1.1,
                     transition: { duration: 0.2, ease: "easeOut" },
@@ -126,6 +66,10 @@ const ClientCarousel = ({ clients }) => {
             ))}
           </motion.div>
         </div>
+
+        {/* Fade edges for smoother visual transition */}
+        <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent pointer-events-none z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent pointer-events-none z-10"></div>
       </div>
     </motion.div>
   );
@@ -138,17 +82,18 @@ const ClientsSection = () => {
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/320px-Tata_logo.svg.png",
     },
     {
-      name: "NCC Limited",
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaI2zGNYT_b8vfTGuQJZ3uVG7MsOpIMwG9mg&s",
-    },
-    {
-      name: "L&T Construction",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png",
+      name: "Vijay Nirman",
+      logo: "https://vijaynirman.com/wp-content/uploads/2015/06/VNC_logo.jpg",
     },
     {
       name: "ADANI Group",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Adani_2012_logo.png/1024px-Adani_2012_logo.png",
     },
+    {
+      name: "L&T Construction",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png",
+    },
+    
     {
       name: "Reliance Industries",
       logo: "https://rilstaticasset.akamaized.net/sites/default/files/2023-02/L.1.jpg",
@@ -186,9 +131,10 @@ const ClientsSection = () => {
       logo: "http://starworthinfra.com/images/logo.png",
     },
     {
-      name: "Vijay Nirman",
-      logo: "https://vijaynirman.com/wp-content/uploads/2015/06/VNC_logo.jpg",
+      name: "NCC Limited",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaI2zGNYT_b8vfTGuQJZ3uVG7MsOpIMwG9mg&s",
     },
+    
     {
       name: "Casagrand",
       logo: "https://buzzfame.in/wp-content/uploads/2023/04/Casagrand-Logo.webp",
@@ -231,7 +177,7 @@ const ClientsSection = () => {
   return (
     <section
       id="clients"
-      className="py-12 sm:py-16 md:py-20 bg-gray-50 w-full overflow-x-hidden"
+      className="py-12 sm:py-16 md:py-10 bg-gray-50 w-full overflow-x-hidden"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Client Portfolio */}
@@ -284,7 +230,7 @@ const ClientsSection = () => {
           >
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Why Choose{" "}
-              <span className="text-yellow-500">LABOURBridge India</span>
+              <span className="text-yellow-500">LABOUR BRIDGES India</span>
             </h3>
             <p className="text-xl text-gray-600">
               Our unique selling propositions that set us apart

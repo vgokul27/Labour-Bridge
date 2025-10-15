@@ -29,41 +29,23 @@ const ContactSection = () => {
     {
       city: "Chennai (Headquarters)",
       address:
-        "#204, 2nd Floor, Urban Heights Tower, OMR Road, Perungudi, Chennai – 600096, Tamil Nadu ",
+        "16th Floor, 69, Pattur Koot Road, Temple, Kundrathur Road, off Mangadu, SriPandian Nagar, Mangadu, Chennai, Tamil Nadu - 600122",
       phone: "+91 93636 51657",
-      email: "chennai@labourbridge.in",
+      email: "info@labourbridges.in",
     },
     {
       city: "Hyderabad",
-      address: "456 Tech City, HITEC City, Hyderabad - 500081, Telangana",
+      address: "H. NO .124 Flat no 14, Saraswathi Nagar, Lothkunta HYD",
       phone: "+91 40 4567 8901",
-      email: "hyderabad@labourbridge.in",
+      email: "info@labourbridges.in",
     },
     {
-      city: "Mumbai",
-      address: "789 Business Hub, Andheri East, Mumbai - 400069, Maharashtra",
+      city: "West Bengal",
+      address: "WEBEL IT Park, Module 401, 4th Floor, Rajarhat, West Bengal",
       phone: "+91 22 6789 0123",
-      email: "mumbai@labourbridge.in",
+      email: "info@labourbridges.in",
     },
-    {
-      city: "Kerala",
-      address: "321 Industrial Area, Kochi - 682030, Kerala",
-      phone: "+91 484 123 4567",
-      email: "kerala@labourbridge.in",
-    },
-    {
-      city: "Gujarat",
-      address: "654 Commercial Zone, Ahmedabad - 380015, Gujarat",
-      phone: "+91 79 8901 2345",
-      email: "gujarat@labourbridge.in",
-    },
-    {
-      city: "Kolkata",
-      address:
-        "987 Business Center, Salt Lake City, Kolkata - 700064, West Bengal",
-      phone: "+91 33 4567 8901",
-      email: "kolkata@labourbridge.in",
-    },
+    
   ];
 
   const services = [
@@ -275,7 +257,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <div className="font-semibold text-gray-900">Email</div>
-                    <div className="text-gray-600">info@labourbridge.in</div>
+                    <div className="text-gray-600">info@labourbridges.in</div>
                   </div>
                 </div>
 
@@ -285,7 +267,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <div className="font-semibold text-gray-900">Phone</div>
-                    <div className="text-gray-600">+91 44 2861 1234</div>
+                    <div className="text-gray-600">+91 93636 51657</div>
                   </div>
                 </div>
 
@@ -298,7 +280,7 @@ const ContactSection = () => {
                       Business Hours
                     </div>
                     <div className="text-gray-600">
-                      Mon - Fri: 9:00 AM - 6:00 PM
+                      Mon - Sat : 9:00 AM - 6:30 PM
                     </div>
                   </div>
                 </div>

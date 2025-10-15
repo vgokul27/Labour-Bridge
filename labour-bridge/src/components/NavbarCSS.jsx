@@ -36,11 +36,8 @@ const Navbar = () => {
             />
             <div>
               <h1 className="text-lg sm:text-xl font-bold text-gray-800 leading-tight">
-                LABOUR BRIDGE
+                LABOUR BRIDGES India
               </h1>
-              <p className="text-xs sm:text-sm text-blue-600 font-medium -mt-1">
-                India
-              </p>
             </div>
           </Link>
 

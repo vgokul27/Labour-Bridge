@@ -59,6 +59,11 @@ const AboutSection = () => {
       role: "Site Supervisor - Orrisa & Surat",
       image: "mahaveer-chowdhry.jpg",
     },
+    {
+      name: "Shubajit Bhattacharjee",
+      role: "Asst Manager- Site Supervisior ( PAN INDIA)",
+      image: "shubajit.jpg",
+    },
   ];
 
   return (
@@ -82,7 +87,7 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            About <span className="text-yellow-500">LABOURBridge India</span>
+            About <span className="text-yellow-500">LABOUR BRIDGES India</span>
           </motion.h2>
           <motion.div
             className="max-w-4xl mx-auto"
@@ -172,7 +177,7 @@ const AboutSection = () => {
         </div>
 
         {/* Leadership Team */}
-        <div className="mb-18">
+        <div className="mb-18 ">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Leadership Team
@@ -182,7 +187,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
             {leadership.map((leader, index) => (
               <div
                 key={index}

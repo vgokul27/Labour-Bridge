@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   Mail,
   Phone,
@@ -12,12 +13,45 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const scrollToSection = (sectionId) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId.replace("#", ""));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // If we're already on home page, just scroll
+      const element = document.getElementById(sectionId.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleNavigation = (href) => {
+    // If it's a section link (starts with #)
+    if (href.startsWith("#")) {
+      scrollToSection(href);
+    } else {
+      // For other routes, use navigate
+      navigate(href);
+    }
+  };
+
   const quickLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "About Us", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Clients", href: "#clients" },
@@ -50,7 +84,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <h3 className="text-2xl font-bold text-white">Labour Bridge</h3>
+              <h3 className="text-2xl font-bold text-white">Labour Bridges</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
               India's most trusted manpower outsourcing company, connecting
@@ -77,13 +111,17 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex space-x-4 mt-6">
               <a
-                href="#"
+                href="https://www.instagram.com/bridgelabour?igsh=MTE5dDg4MWdlNTE5eg==&utm_source=ig_contact_invite"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-yellow-500 hover:text-black p-3 rounded-lg transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/BridgeLabour?t=tGu-OT2it7I8Xk5UVVBqGw&s=08"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gray-800 hover:bg-yellow-500 hover:text-black p-3 rounded-lg transition-colors"
               >
                 <Twitter className="h-5 w-5" />
@@ -105,12 +143,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200"
+                  <button
+                    onClick={() => handleNavigation(link.href)}
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-left"
                   >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -122,9 +160,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <span className="text-gray-300 text-sm leading-relaxed">
+                  <button
+                    onClick={() => scrollToSection("#services")}
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-sm leading-relaxed cursor-pointer text-left"
+                  >
                     {service}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>
