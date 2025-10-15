@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { CheckCircle, MapPin, Calendar } from "lucide-react";
 
 const OngoingProjectsSection = () => {
@@ -321,51 +320,28 @@ const OngoingProjectsSection = () => {
   return (
     <section
       id="ongoing-projects"
-      className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 bg-gray-50 w-full overflow-x-hidden"
+      className="pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-8 md:pb-20 bg-gray-50"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+        <div className="text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-6">
             Current Ongoing Projects -
             <span className="text-yellow-500"> Chennai</span>
-          </motion.h2>
-          <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             Currently active projects where our skilled workforce is making a
             difference across Chennai's infrastructure and construction
             landscape.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Ongoing Projects Grid */}
         <div className="grid lg:grid-cols-3 gap-8 mb-20">
           {ongoingProjects.map((project, index) => (
-            <motion.div
+            <div
               key={project.id}
-              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -5 }}
+              className="rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group transform hover:scale-105 hover:-translate-y-2"
             >
               {/* Project Image Only */}
               <div className="relative h-80 overflow-hidden">
@@ -381,36 +357,18 @@ const OngoingProjectsSection = () => {
                   {project.status}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* New Hyderabad Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               On Going Work On Different Sites Location{" "}
               <span className="text-yellow-500">July 2025</span>
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Hyderabad</span>
@@ -419,20 +377,15 @@ const OngoingProjectsSection = () => {
                 <Calendar className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">July 2025</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Hyderabad Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {hydProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -456,55 +409,32 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Gujarat (Mundra) Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Gujarat ( Mundra )</span> Sites
               Location
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Mundra, Gujarat</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Gujarat Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {gujaratProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -528,54 +458,31 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Surat Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Surat</span> Sites Location
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Surat, Gujarat</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Surat Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {suratProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -599,54 +506,31 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Mumbai Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Mumbai</span> Sites Location
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Mumbai, Maharashtra</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Mumbai Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {mumbaiProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -670,55 +554,32 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Andhra Pradesh (Airport) Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Andhra Pradesh</span> Sites
               Location <span className="text-gray-600">(Airport)</span>
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Andhra Pradesh</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Andhra Pradesh Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {apProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -742,54 +603,31 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Tamil Nadu Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Tamil Nadu</span> Sites Location{" "}
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Tamil Nadu</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Tamil Nadu Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tnProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -813,54 +651,31 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Orissa Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Orissa</span> Sites Location
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Orissa</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Orissa Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {orissaProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -884,55 +699,32 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Adani Khavrah Gujarat Section */}
-        <motion.div
-          className="mb-16"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="mb-16">
           <div className="text-center mb-12">
-            <motion.h3
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               <span className="text-yellow-500">Adani Khavrah Gujarat</span>{" "}
               Sites Location
-            </motion.h3>
-            <motion.div
-              className="flex items-center justify-center gap-4 text-gray-600 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            </h3>
+            <div className="flex items-center justify-center gap-4 text-gray-600 mb-6">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-yellow-500" />
                 <span className="text-lg font-medium">Khavrah, Gujarat</span>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Adani Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {adaniProjects.map((project, index) => (
-              <motion.div
+              <div
                 key={project.id}
-                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.03, y: -3 }}
+                className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group bg-white transform hover:scale-105 hover:-translate-y-1"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -956,19 +748,13 @@ const OngoingProjectsSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* Bottom Info */}
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center">
           <div className="bg-gradient-to-br from-black via-gray-900 to-gray-800 rounded-3xl p-8 lg:p-12">
             <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
               Excellence in Every Project
@@ -993,7 +779,7 @@ const OngoingProjectsSection = () => {
               </span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
