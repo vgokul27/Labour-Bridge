@@ -175,6 +175,9 @@ const ServicesSection = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {category.services.map((service, serviceIndex) => {
             const Icon = service.icon;
+            // Check if this is the Project-Based Staffing category
+            const isProjectBased = category.title === "Project-Based Staffing";
+
             return (
               <div
                 key={serviceIndex}
@@ -184,7 +187,11 @@ const ServicesSection = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center mb-4 group-hover:from-yellow-500 group-hover:to-yellow-600 transition-all duration-300">
                     <Icon className="h-8 w-8 text-black" />
                   </div>
-                  <h4 className="text-base font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300 leading-tight">
+                  <h4
+                    className={`font-semibold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300 leading-tight ${
+                      isProjectBased ? "text-sm md:text-base" : "text-base"
+                    }`}
+                  >
                     {service.name}
                   </h4>
                 </div>
@@ -205,7 +212,10 @@ const ServicesSection = () => {
         {/* Services Header */}
         <div className="text-center mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-yellow-500">Services</span>
+            Our{" "}
+            <span className="text-yellow-500" style={{ fontWeight: "800" }}>
+              Services
+            </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
             LABOUR BRIDGES India offers a comprehensive range of manpower
