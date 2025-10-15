@@ -50,6 +50,25 @@ const Footer = () => {
     }
   };
 
+  const navigateToAbout = () => {
+    if (location.pathname !== "/about") {
+      navigate("/about");
+      // Wait for navigation to complete, then scroll to about section
+      setTimeout(() => {
+        const aboutElement = document.getElementById("about");
+        if (aboutElement) {
+          aboutElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      // If already on home page, scroll to about section
+      const aboutElement = document.getElementById("about");
+      if (aboutElement) {
+        aboutElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "#about" },
@@ -138,14 +157,14 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="lg:ml-20">
             <h4 className="text-xl font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="sm:space-y-1 lg:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
                     onClick={() => handleNavigation(link.href)}
-                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-left"
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-left cursor-pointer"
                   >
                     {link.name}
                   </button>
@@ -157,7 +176,7 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-xl font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3">
+            <ul className="sm:space-y-1 lg:space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
                   <button
@@ -174,12 +193,15 @@ const Footer = () => {
           {/* Industries */}
           <div>
             <h4 className="text-xl font-semibold mb-6">Industries We Serve</h4>
-            <ul className="space-y-3">
+            <ul className="sm:space-y-1 lg:space-y-3">
               {industries.map((industry, index) => (
                 <li key={index}>
-                  <span className="text-gray-300 text-sm leading-relaxed">
+                  <button
+                    onClick={navigateToAbout}
+                    className="text-gray-300 hover:text-yellow-500 transition-colors duration-200 text-sm leading-relaxed cursor-pointer text-left"
+                  >
                     {industry}
-                  </span>
+                  </button>
                 </li>
               ))}
             </ul>

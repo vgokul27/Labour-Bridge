@@ -1,6 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Target, Eye, Heart } from "lucide-react";
+import {
+  MapPin,
+  Target,
+  Eye,
+  Heart,
+  Building,
+  Factory,
+  Hammer,
+  Home,
+  Truck,
+  Zap,
+} from "lucide-react";
 
 const AboutSection = () => {
   const values = [
@@ -56,13 +67,52 @@ const AboutSection = () => {
     },
     {
       name: "Mahaveer Chowdhry",
-      role: "Site Supervisor - Orrisa & Surat",
+      role: "Site Supervisor - Orrisa & Surat",
       image: "mahaveer-chowdhry.jpg",
     },
     {
       name: "Shubajit Bhattacharjee",
-      role: "Asst Manager- Site Supervisior ( PAN INDIA)",
+      role: "Asst Manager- Site Supervisior ( PAN INDIA)",
       image: "shubajit.jpg",
+    },
+  ];
+
+  const industries = [
+    {
+      icon: Building,
+      title: "Construction",
+      description:
+        "M/s Labour Bridges India is a leading manpower service provider specializing in the construction industry across PAN India. We supply skilled and unskilled workers including masons, carpenters, bar benders, welders, electricians, helpers, and site supervisors for civil, mechanical, and electrical works. Our workforce supports large-scale projects for reputed companies like TATA, L&T, NCC, ADANI, and KEC, ensuring timely completion and superior workmanship. With a focus on safety, quality, and productivity, we provide end-to-end manpower management—covering recruitment, deployment, and on-site supervision. M/s Labour Bridges India stands as a trusted partner in building India's infrastructure with reliability and workforce excellence.",
+    },
+    {
+      icon: Factory,
+      title: "Manufacturing",
+      description:
+        "M/s Labour Bridges India provides dependable manpower services to the manufacturing industry across PAN India. We supply skilled and semi-skilled workers, including machine operators, fitters, welders, fabricators, helpers, and supervisors, ensuring smooth plant operations and production efficiency. Our workforce supports diverse manufacturing sectors such as automotive, steel, cement, engineering, and heavy industries. With a strong focus on quality, safety, and timely deployment, we help clients maintain continuous operations and meet production targets. Partnering with leading industrial firms, M/s Labour Bridges India delivers reliable workforce solutions that enhance productivity, reduce downtime, and ensure compliance with industry standards and best practices.",
+    },
+    {
+      icon: Hammer,
+      title: "Infrastructure",
+      description:
+        "M/s Labour Bridges India plays a vital role in strengthening the infrastructure sector by providing skilled and unskilled manpower across major projects in India. Our workforce supports the construction of roads, bridges, railways, power plants, ports, and industrial structures with precision and dedication. We supply engineers, supervisors, equipment operators, welders, fitters, and general laborers to ensure seamless project execution. With a focus on safety, quality, and on-time delivery, M/s Labour Bridges India partners with top infrastructure companies like TATA, L&T, NCC, and ADANI, contributing to nation-building through reliable workforce solutions and efficient manpower management across diverse project environments.",
+    },
+    {
+      icon: Home,
+      title: "Real Estate",
+      description:
+        "M/s Labour Bridges India delivers efficient and dependable manpower solutions to the real estate sector across India. We supply skilled and unskilled workers including masons, bar benders, electricians, plumbers, painters, and site supervisors for residential, commercial, and industrial projects. Our workforce ensures high-quality workmanship, adherence to timelines, and compliance with safety standards. By supporting developers and construction firms in every project phase—from foundation to finishing—we help achieve smooth execution and timely possession. M/s Labour Bridges India is trusted by leading real estate companies for its professionalism, workforce reliability, and commitment to excellence in building modern infrastructure and urban developments.",
+    },
+    {
+      icon: Truck,
+      title: "Logistics",
+      description:
+        "M/s Labour Bridges India provides reliable manpower services to the logistics and supply chain sector across PAN India. We supply skilled and unskilled personnel including loaders, unloaders, warehouse assistants, forklift operators, delivery staff, and supervisors to ensure smooth handling, storage, and movement of goods. Our workforce supports logistics operations in ports, warehouses, distribution centers, and factories, ensuring timely dispatch and efficiency. With a focus on discipline, productivity, and safety, M/s Labour Bridges India helps clients reduce operational downtime and improve supply chain performance. We are a trusted partner for logistics companies seeking dependable workforce solutions across India's growing logistics network.",
+    },
+    {
+      icon: Zap,
+      title: "EPC Sectors",
+      description:
+        "M/s Labour Bridges India offers specialized manpower solutions to the EPC (Engineering, Procurement & Construction) sector across PAN India. We supply skilled and unskilled workers including engineers, technicians, welders, fitters, riggers, and helpers for civil, mechanical, and electrical projects. Our workforce supports all project stages—from foundation and fabrication to commissioning and maintenance—ensuring quality, safety, and timely completion. Partnering with leading EPC companies like TATA, L&T, NCC, and KEC, we provide reliable manpower for industrial plants, refineries, power projects, and infrastructure works. M/s Labour Bridges India is committed to delivering excellence and efficiency in every EPC project nationwide.",
     },
   ];
 
@@ -177,7 +227,7 @@ const AboutSection = () => {
         </div>
 
         {/* Leadership Team */}
-        <div className="mb-18 ">
+        <div className="mb-20">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Leadership Team
@@ -187,11 +237,15 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {leadership.map((leader, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white rounded-2xl p-8 shadow-2xl border border-gray-100 text-center group hover:shadow-xl transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
               >
                 <img
                   src={leader.image}
@@ -207,8 +261,59 @@ const AboutSection = () => {
                   {leader.name}
                 </h4>
                 <p className="text-gray-600 font-medium">{leader.role}</p>
-              </div>
+              </motion.div>
             ))}
+          </div>
+        </div>
+
+        {/* Industries We Serve */}
+        <div className="mb-20">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Industries We <span className="text-yellow-500">Serve</span>
+            </h3>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Delivering specialized manpower solutions across diverse sectors
+              with excellence and reliability
+            </p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {industries.map((industry, index) => {
+              const Icon = industry.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex flex-col md:flex-row items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-4 rounded-2xl">
+                        <Icon className="h-10 w-10 text-black" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                        {industry.title}
+                      </h4>
+                      <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                        {industry.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
