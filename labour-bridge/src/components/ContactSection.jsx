@@ -31,21 +31,20 @@ const ContactSection = () => {
       address:
         "16th Floor, 69, Pattur Koot Road, Temple, Kundrathur Road, off Mangadu, SriPandian Nagar, Mangadu, Chennai, Tamil Nadu - 600122",
       phone: "+91 93636 51657",
-      email: "info@labourbridges.in",
+      email: "info@labourbridges.com",
     },
     {
       city: "Hyderabad",
       address: "H. NO .124 Flat no 14, Saraswathi Nagar, Lothkunta HYD",
       phone: "+91 40 4567 8901",
-      email: "info@labourbridges.in",
+      email: "info@labourbridges.com",
     },
     {
       city: "West Bengal",
       address: "WEBEL IT Park, Module 401, 4th Floor, Rajarhat, West Bengal",
       phone: "+91 22 6789 0123",
-      email: "info@labourbridges.in",
+      email: "info@labourbridges.com",
     },
-    
   ];
 
   const services = [
@@ -257,7 +256,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <div className="font-semibold text-gray-900">Email</div>
-                    <div className="text-gray-600">info@labourbridges.in</div>
+                    <div className="text-gray-600">info@labourbridges.com</div>
                   </div>
                 </div>
 
