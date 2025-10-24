@@ -14,8 +14,38 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here
+
+    // Check if required fields are filled
+    if (
+      !formData.name.trim() ||
+      !formData.email.trim() ||
+      !formData.message.trim()
+    ) {
+      alert("Please fill in all required fields (Name, Email, and Message).");
+      return;
+    }
+
+    // Log form data for debugging (optional)
     console.log("Form submitted:", formData);
+
+    // Redirect to Google Form
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfzI0iXQ0yuCXUb3890JueFgYAEo6M-uDU6E3LZiUF2lDABcg/viewform?usp=publish-editor",
+      "_blank"
+    );
+
+    // Optional: Reset form after submission
+    setFormData({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      service: "",
+      message: "",
+    });
+
+    // Optional: Show success message
+    alert("Thank you! You will be redirected to complete your submission.");
   };
 
   const handleChange = (e) => {
@@ -35,7 +65,7 @@ const ContactSection = () => {
     },
     {
       city: "Hyderabad",
-      address: "H. NO .124 Flat no 14, Saraswathi Nagar, Lothkunta HYD",
+      address: "H. NO .124 Flat no 14, Saraswathi Nagar, Lothkunta HYD",
       phone: "+91 40 4567 8901",
       email: "info@labourbridges.com",
     },
