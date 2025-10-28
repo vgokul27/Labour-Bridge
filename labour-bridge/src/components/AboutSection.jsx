@@ -47,7 +47,7 @@ const AboutSection = () => {
     },
     {
       name: "Mriganka Dey",
-      role: "Independent Director, Client Management",
+      role: "Director, Client Management",
       image: "mriganka-dey.jpg",
     },
     {
