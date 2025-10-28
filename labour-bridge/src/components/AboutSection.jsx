@@ -41,9 +41,9 @@ const AboutSection = () => {
 
   const leadership = [
     {
-      name: "Ajay Sharma",
-      role: "CEO & Founder Director",
-      image: "ajay-sharma.jpg",
+      name: "Sunil K Nair",
+      role: "General Manager - Business Development",
+      image: "sunil.jpg",
     },
     {
       name: "Mriganka Dey",
@@ -60,20 +60,11 @@ const AboutSection = () => {
       role: "Independent Director - Finance Management",
       image: "manasi-dey.jpg",
     },
-    {
-      name: "Sunil K Nair",
-      role: "General Manager - Business Development",
-      image: "sunil.jpg",
-    },
+
     {
       name: "Mahaveer Chowdhry",
       role: "Site Supervisor - Orrisa & Surat",
       image: "mahaveer-chowdhry.jpg",
-    },
-    {
-      name: "Shubajit Bhattacharjee",
-      role: "Asst Manager- Site Supervisior ( PAN INDIA)",
-      image: "shubajit.jpg",
     },
   ];
 
