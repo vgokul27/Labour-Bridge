@@ -60,7 +60,7 @@ const ContactSection = () => {
       city: "Chennai (Headquarters)",
       address:
         "16th Floor, 69, Pattur Koot Road, Temple, Kundrathur Road, off Mangadu, SriPandian Nagar, Mangadu, Chennai, Tamil Nadu - 600122",
-      phone: "+91 93636 51657",
+      phone: "+91 40 4567 8902",
       email: "info@labourbridges.com",
     },
     {
@@ -296,7 +296,7 @@ const ContactSection = () => {
                   </div>
                   <div className="ml-4">
                     <div className="font-semibold text-gray-900">Phone</div>
-                    <div className="text-gray-600">+91 93636 51657</div>
+                    <div className="text-gray-600">+91 40 4567 8902</div>
                   </div>
                 </div>
 
