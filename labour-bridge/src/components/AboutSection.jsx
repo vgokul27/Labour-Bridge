@@ -45,10 +45,21 @@ const AboutSection = () => {
       role: "General Manager - Business Development",
       image: "sunil.jpg",
     },
+
     {
-      name: "Mriganka Dey",
-      role: "Director, Client Management",
-      image: "mriganka-dey.jpg",
+      name: "Ms. Manasi Dey",
+      role: "Independent Director - Finance Management",
+      image: "manasi-dey.jpg",
+    },
+    {
+      name: "Rakesh K",
+      role: "General Manager Resource & Planning",
+      image: "rakesh.jpg",
+    },
+    {
+      name: "Mahaveer Chowdhry",
+      role: "Site Supervisor - Orrisa & Surat",
+      image: "mahaveer-chowdhry.jpg",
     },
     {
       name: "Aniket Sharma",
@@ -56,15 +67,54 @@ const AboutSection = () => {
       image: "aniket.jpg",
     },
     {
-      name: "Ms. Manasi Dey",
-      role: "Independent Director - Finance Management",
-      image: "manasi-dey.jpg",
+      name: "Malaika Trish Tewari",
+      role: "Partner, Resource Planning",
+      image: "malaika.jpg",
     },
-
     {
-      name: "Mahaveer Chowdhry",
-      role: "Site Supervisor - Orrisa & Surat",
-      image: "mahaveer-chowdhry.jpg",
+      name: "Razina",
+      role: "Partner, Resource Planning",
+      image: "razina.jpg",
+    },
+    {
+      name: "Gyanavi Sharma",
+      role: "Partner, Resource Planning",
+      image: "gyanavi.jpg",
+    },
+    {
+      name: "Kiran Shaw",
+      role: "Partner, Resource Planning",
+      image: "kiran.jpg",
+    },
+    {
+      name: "Swastika Sinha",
+      role: "Partner, Resource Planning",
+      image: "swastika.jpg",
+    },
+    {
+      name: "Debajyoti Chakraborty",
+      role: "Partner, Resource Planning",
+      image: "debajyoti.jpg",
+    },
+    {
+      name: "Jyotirmoy",
+      role: "Partner, Resource Planning",
+      image: "jyotirmoy.jpg",
+    },
+    {
+      name: "ramanpreet Kaur",
+      role: "Partner, Resource Planning",
+      image: "ramanpreet.jpg",
+    },
+    {
+      name: "Mahek",
+      role: "Partner, Resource Planning",
+      image: "mahek.jpg",
+    },
+    {
+      name: "Sreyashi Poddar",
+      role: "Partner, Resource Planning",
+      image: "sreyashi.jpg",
     },
   ];
 
@@ -261,10 +311,10 @@ const AboutSection = () => {
         <div className="mb-20">
           <motion.div
             className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Industries We <span className="text-yellow-500">Serve</span>
@@ -282,24 +332,58 @@ const AboutSection = () => {
                 <motion.div
                   key={index}
                   className="bg-white rounded-3xl p-6 md:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="flex flex-col md:flex-row items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-4 rounded-2xl">
+                      <motion.div
+                        className="bg-gradient-to-br from-yellow-400 to-yellow-500 p-4 rounded-2xl"
+                        initial={{ scale: 0.8, rotate: -10 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          delay: index * 0.1 + 0.2,
+                          ease: "easeOut",
+                        }}
+                        viewport={{ once: true }}
+                      >
                         <Icon className="h-10 w-10 text-black" />
-                      </div>
+                      </motion.div>
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                      <motion.h4
+                        className="text-2xl md:text-3xl font-bold text-gray-900 mb-4"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.4,
+                          delay: index * 0.1 + 0.3,
+                          ease: "easeOut",
+                        }}
+                        viewport={{ once: true }}
+                      >
                         {industry.title}
-                      </h4>
-                      <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                      </motion.h4>
+                      <motion.p
+                        className="text-gray-600 text-base md:text-lg leading-relaxed"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{
+                          duration: 0.5,
+                          delay: index * 0.1 + 0.4,
+                          ease: "easeOut",
+                        }}
+                        viewport={{ once: true }}
+                      >
                         {industry.description}
-                      </p>
+                      </motion.p>
                     </div>
                   </div>
                 </motion.div>
