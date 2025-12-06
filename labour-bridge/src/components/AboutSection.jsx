@@ -45,12 +45,6 @@ const AboutSection = () => {
       role: "General Manager - Business Development",
       image: "sunil.jpg",
     },
-
-    {
-      name: "Ms. Manasi Dey",
-      role: "Independent Director - Finance Management",
-      image: "manasi-dey.jpg",
-    },
     {
       name: "Rakesh K",
       role: "General Manager Resource & Planning",
@@ -102,7 +96,7 @@ const AboutSection = () => {
       image: "jyotirmoy.jpg",
     },
     {
-      name: "ramanpreet Kaur",
+      name: "Ramanpreet Kaur",
       role: "Partner, Resource Planning",
       image: "ramanpreet.jpg",
     },
